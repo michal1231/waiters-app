@@ -3,12 +3,17 @@ import StatusInput from "../StatusInput/StatusInput";
 import PeopleAmount from "../PeopleAmount/PeopleAmount";
 import BillInput from "../BillInput/BillInput";
 import { useParams } from 'react-router';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { getTableById } from "../../Redux/subreducers/tablesReducer";
 import { useState } from "react";
 import { settings } from "../../settings/settings";
+import { updateTableRequest } from "../../Redux/subreducers/tablesReducer";
+import { useNavigate } from "react-router";
 
 const TableDetails = ({ id }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   //initial table info
   const { tableId } = useParams();
   const { name, status, peopleAmount, maxPeopleAmount, bill } = useSelector(state => getTableById(state, parseInt(tableId)));
@@ -48,17 +53,21 @@ const TableDetails = ({ id }) => {
     }
   }
 
-  console.log(name, tableStatus, tablePeopleAmount, tableMaxAmount, tableBill);
+  const handleSubmit = e => {
+    e.preventDefault();
+    dispatch(updateTableRequest({ id: tableId, status: tableStatus, peopleAmount: tablePeopleAmount, maxPeopleAmount: tableMaxAmount, bill: tableBill }));
+    navigate('/');
+  }
 
   return (
-    <section>
+    <form onSubmit={handleSubmit}>
       <Header>{name}</Header>
       <StatusInput onChange={statusChangeHandle} value={tableStatus} />
       <PeopleAmount amountAction={amountChangeHandle} amountActionMax={maxChangeHadnle} value={tablePeopleAmount} valueMax={tableMaxAmount} />
       {tableStatus === busy ?
         <BillInput onChange={e => setTableBill(parseInt(e.target.value))} value={tableBill} /> : null}
-      <button>Update</button>
-    </section>
+      <button type="submit">Update</button>
+    </form>
   );
 };
 

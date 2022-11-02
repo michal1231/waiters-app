@@ -9,7 +9,7 @@ const Home = (test) => {
   return (
     <section>
       <Header>All tables</Header>
-      {tables.map(table => <Table key={table.id} id={table.id} />)}
+      {tables.map(table => <Table key={table.id} name={table.name} status={table.status} id={table.id} />)}
     </section>
   );
 };
