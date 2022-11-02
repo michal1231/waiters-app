@@ -46,7 +46,7 @@ const TableDetails = ({ tableId }) => {
     }
   }
 
-  const maxChangeHadnle = e => {
+  const maxChangeHandle = e => {
     const parsedNumber = parseInt(e.target.value);
     setTableMaxAmount(parsedNumber);
     if (parsedNumber < tablePeopleAmount) {
@@ -65,7 +65,7 @@ const TableDetails = ({ tableId }) => {
       <form onSubmit={handleSubmit}>
         <Header>{name}</Header>
         <StatusInput onChange={statusChangeHandle} value={tableStatus} />
-        <PeopleAmount amountAction={amountChangeHandle} amountActionMax={maxChangeHadnle} value={tablePeopleAmount} valueMax={tableMaxAmount} />
+        <PeopleAmount amountAction={amountChangeHandle} amountActionMax={maxChangeHandle} value={tablePeopleAmount} valueMax={tableMaxAmount} />
         {tableStatus === busy ?
           <BillInput onChange={e => setTableBill(parseInt(e.target.value))} value={tableBill} /> : null}
         <Button variant="primary" type="submit">Update</Button>{' '}

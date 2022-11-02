@@ -36,7 +36,7 @@ export const updateTableRequest = table => {
     };
 
     fetch(`http://localhost:3131/api/tables/${table.id}`, options)
-    //.then(() => dispatch(updateTable(table)));
+      .then(() => dispatch(updateTable(table)));
   }
 }
 
