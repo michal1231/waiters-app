@@ -1,15 +1,21 @@
-import { settings } from "../../settings/settings"
+import { settings } from "../../settings/settings";
+import styles from './PeopleAmount.module.scss';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
 
 const PeopleAmount = ({ amountAction, amountActionMax, value, valueMax }) => {
   const minAmount = settings.minPeopleAmount;
   const maxAmount = settings.maxPeopleAmount;
 
   return (
-    <div>
-      <span>People:</span>
-      <input type="number" min={minAmount} max={maxAmount} value={value} onChange={amountAction} name="amount"></input>
-      <input type="number" min={minAmount} max={maxAmount} value={valueMax} onChange={amountActionMax} name="amountMax"></input>
-    </div>
+    <Container className={styles.container}>
+      <Form.Group>
+        <Form.Label className={styles.label}>People:</Form.Label>
+        <Form.Control type="number" value={value} onChange={amountAction} className={styles.peopleAmount} min={minAmount} max={maxAmount} />
+        <span className={styles.slash}>/</span>
+        <Form.Control type="number" value={valueMax} onChange={amountActionMax} className={styles.peopleAmount} min={minAmount} max={maxAmount} />
+      </Form.Group>
+    </Container>
   );
 };
 

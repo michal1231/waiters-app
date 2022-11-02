@@ -9,8 +9,10 @@ import { useState } from "react";
 import { settings } from "../../settings/settings";
 import { updateTableRequest } from "../../Redux/subreducers/tablesReducer";
 import { useNavigate } from "react-router";
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
 
-const TableDetails = ({ id }) => {
+const TableDetails = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -60,14 +62,16 @@ const TableDetails = ({ id }) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Header>{name}</Header>
-      <StatusInput onChange={statusChangeHandle} value={tableStatus} />
-      <PeopleAmount amountAction={amountChangeHandle} amountActionMax={maxChangeHadnle} value={tablePeopleAmount} valueMax={tableMaxAmount} />
-      {tableStatus === busy ?
-        <BillInput onChange={e => setTableBill(parseInt(e.target.value))} value={tableBill} /> : null}
-      <button type="submit">Update</button>
-    </form>
+    <Container>
+      <form onSubmit={handleSubmit}>
+        <Header>{name}</Header>
+        <StatusInput onChange={statusChangeHandle} value={tableStatus} />
+        <PeopleAmount amountAction={amountChangeHandle} amountActionMax={maxChangeHadnle} value={tablePeopleAmount} valueMax={tableMaxAmount} />
+        {tableStatus === busy ?
+          <BillInput onChange={e => setTableBill(parseInt(e.target.value))} value={tableBill} /> : null}
+        <Button variant="primary" type="submit">Update</Button>{' '}
+      </form>
+    </Container>
   );
 };
 

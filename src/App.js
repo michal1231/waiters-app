@@ -4,6 +4,10 @@ import { useDispatch } from "react-redux";
 import Home from "./components/Home/Home";
 import { Routes, Route } from 'react-router-dom';
 import TableDetails from "./components/TableDetails/TableDetails";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
+import Container from 'react-bootstrap/Container';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -13,12 +17,18 @@ function App() {
 
   return (
     <main>
-      {loaded ?
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/table/:tableId" element={<TableDetails />} />
-        </Routes>
-        : null}
+      <Container>
+        <NavBar />
+        {loaded ?
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/table/:tableId" element={<TableDetails />} />
+            <Route path="*" element={<Home />} />
+
+          </Routes>
+          : null}
+        <Footer />
+      </Container>
     </main>
   );
 }

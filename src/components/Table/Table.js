@@ -1,13 +1,16 @@
+import ButtonLink from '../ButtonLink/ButtonLink';
+import Container from 'react-bootstrap/Container';
 import styles from './Table.module.scss';
-import { Link } from 'react-router-dom';
 
 const Table = ({ name, status, id }) => {
   return (
-    <div className={styles.table}>
-      <span>{name}</span>
-      <span>Status: {status}</span>
-      <Link to={`table/${id}`}>Show more</Link>
-    </div>
+    <Container className={styles.container}>
+      <div>
+        <span className={styles.name}>{name}</span>
+        <p className={styles.statusCheck}><span className={styles.status}>Status: </span>{status}</p>
+      </div>
+      <ButtonLink id={id}>Show more</ButtonLink>
+    </Container>
   );
 };
 
