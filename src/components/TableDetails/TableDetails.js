@@ -56,7 +56,7 @@ const TableDetails = ({ tableId }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    dispatch(updateTableRequest({ id: tableId, status: tableStatus, peopleAmount: tablePeopleAmount, maxPeopleAmount: tableMaxAmount, bill: tableBill }));
+    dispatch(updateTableRequest({ id: tableId, name, status: tableStatus, peopleAmount: tablePeopleAmount, maxPeopleAmount: tableMaxAmount, bill: tableBill }));
     navigate('/');
   }
 
