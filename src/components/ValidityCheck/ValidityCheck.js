@@ -6,11 +6,10 @@ import TableDetails from "../TableDetails/TableDetails";
 
 const ValidityCheck = () => {
   const { tableId } = useParams();
-  const isTable = useSelector(state => getTableById(state, parseInt(tableId)));
-
+  const isTable = useSelector(state => getTableById(state, tableId));
   if (!isTable) return <Navigate to="/" />
   return (
-    <TableDetails tableId={parseInt(tableId)} />
+    <TableDetails tableId={tableId} />
   );
 };
 

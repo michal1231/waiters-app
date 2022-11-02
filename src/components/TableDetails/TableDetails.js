@@ -75,7 +75,7 @@ const TableDetails = ({ tableId }) => {
 };
 
 TableDetails.propTypes = {
-  tableId: PropTypes.number.isRequired,
+  tableId: PropTypes.string.isRequired,
 }
 
 export default TableDetails;

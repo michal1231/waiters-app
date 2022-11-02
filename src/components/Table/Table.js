@@ -18,7 +18,7 @@ const Table = ({ name, status, id }) => {
 Table.propTypes = {
   name: PropTypes.string.isRequired,
   status: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired
+  id: PropTypes.string.isRequired
 }
 
 export default Table;

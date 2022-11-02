@@ -11,7 +11,7 @@ const ButtonLink = ({ id, children }) => {
 };
 
 ButtonLink.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 }
 
 export default ButtonLink
