@@ -19,7 +19,6 @@ export const fetchTables = loadedData => {
   }
 }
 export const updateTableRequest = table => {
-  console.log(table);
   return (dispatch) => {
     const options = {
       method: 'PATCH',

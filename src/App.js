@@ -3,10 +3,12 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Home from "./components/Home/Home";
 import { Routes, Route } from 'react-router-dom';
-import TableDetails from "./components/TableDetails/TableDetails";
 import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
 import Container from 'react-bootstrap/Container';
+import ValidityCheck from "./components/ValidityCheck/ValidityCheck";
+import LoadingSpinner from "./components/LoadingSpinner/LoadingSpinner";
+
 
 
 function App() {
@@ -22,11 +24,11 @@ function App() {
         {loaded ?
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/table/:tableId" element={<TableDetails />} />
+            <Route path="/table/:tableId" element={<ValidityCheck />} />
             <Route path="*" element={<Home />} />
 
           </Routes>
-          : null}
+          : <LoadingSpinner />}
         <Footer />
       </Container>
     </main>

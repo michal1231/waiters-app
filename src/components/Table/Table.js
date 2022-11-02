@@ -1,6 +1,7 @@
 import ButtonLink from '../ButtonLink/ButtonLink';
 import Container from 'react-bootstrap/Container';
 import styles from './Table.module.scss';
+import PropTypes from 'prop-types';
 
 const Table = ({ name, status, id }) => {
   return (
@@ -13,5 +14,11 @@ const Table = ({ name, status, id }) => {
     </Container>
   );
 };
+
+Table.propTypes = {
+  name: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
+}
 
 export default Table;

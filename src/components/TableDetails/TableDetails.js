@@ -2,7 +2,6 @@ import Header from "../Header/Header";
 import StatusInput from "../StatusInput/StatusInput";
 import PeopleAmount from "../PeopleAmount/PeopleAmount";
 import BillInput from "../BillInput/BillInput";
-import { useParams } from 'react-router';
 import { useSelector, useDispatch } from "react-redux";
 import { getTableById } from "../../Redux/subreducers/tablesReducer";
 import { useState } from "react";
@@ -11,14 +10,14 @@ import { updateTableRequest } from "../../Redux/subreducers/tablesReducer";
 import { useNavigate } from "react-router";
 import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
+import PropTypes from 'prop-types';
 
-const TableDetails = () => {
+const TableDetails = ({ tableId }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   //initial table info
-  const { tableId } = useParams();
-  const { name, status, peopleAmount, maxPeopleAmount, bill } = useSelector(state => getTableById(state, parseInt(tableId)));
+  const { name, status, peopleAmount, maxPeopleAmount, bill } = useSelector(state => getTableById(state, tableId));
 
   //local states
   const [tableStatus, setTableStatus] = useState(status);
@@ -74,5 +73,9 @@ const TableDetails = () => {
     </Container>
   );
 };
+
+TableDetails.propTypes = {
+  tableId: PropTypes.number.isRequired,
+}
 
 export default TableDetails;

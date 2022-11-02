@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 import Table from "../Table/Table";
 import Container from 'react-bootstrap/Container';
 
-const Home = (test) => {
+const Home = () => {
   const tables = useSelector(getAllTables);
 
   return (

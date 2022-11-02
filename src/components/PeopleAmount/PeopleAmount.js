@@ -2,6 +2,7 @@ import { settings } from "../../settings/settings";
 import styles from './PeopleAmount.module.scss';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import PropTypes from 'prop-types';
 
 const PeopleAmount = ({ amountAction, amountActionMax, value, valueMax }) => {
   const minAmount = settings.minPeopleAmount;
@@ -18,5 +19,12 @@ const PeopleAmount = ({ amountAction, amountActionMax, value, valueMax }) => {
     </Container>
   );
 };
+
+PeopleAmount.propTypes = {
+  amountAction: PropTypes.func.isRequired,
+  amountActionMax: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired,
+  valueMax: PropTypes.number.isRequired,
+}
 
 export default PeopleAmount;

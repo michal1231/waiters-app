@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const ButtonLink = ({ id, children }) => {
   return (
@@ -8,5 +9,9 @@ const ButtonLink = ({ id, children }) => {
     </Link>
   );
 };
+
+ButtonLink.propTypes = {
+  id: PropTypes.number.isRequired,
+}
 
 export default ButtonLink

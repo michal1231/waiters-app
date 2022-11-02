@@ -19,16 +19,16 @@
     {
       "id": 3,
       "name": "Table 3",
-      "status": "Busy",
-      "peopleAmount": 6,
+      "status": "Free",
+      "peopleAmount": 0,
       "maxPeopleAmount": 6,
       "bill": 0
     },
     {
       "id": 4,
       "name": "Table 4",
-      "status": "Busy",
-      "peopleAmount": 3,
+      "status": "Cleaning",
+      "peopleAmount": 2,
       "maxPeopleAmount": 8,
       "bill": 12
     },

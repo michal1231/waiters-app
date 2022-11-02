@@ -1,6 +1,7 @@
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
 import styles from './BillInput.module.scss';
+import PropTypes from 'prop-types';
 
 const BillInput = ({ onChange, value }) => {
   return (
@@ -13,5 +14,10 @@ const BillInput = ({ onChange, value }) => {
     </Container>
   );
 };
+
+BillInput.propTypes = {
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.number.isRequired,
+}
 
 export default BillInput;
