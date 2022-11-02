@@ -1,0 +1,71 @@
+[33mcommit 5fc205950b52bca04ebb7ddf8d675f44c212db66[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 17:25:01 2022 +0100
+
+    Modify package.json
+
+[33mcommit 46fed0cb7ab176570ed4dad889f769cb13062973[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 17:20:07 2022 +0100
+
+    Modify package.json
+
+[33mcommit b7271a019b49a48eb028544c0e176e1eca86e3a4[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 17:18:08 2022 +0100
+
+    Change in .lock files and package.json
+
+[33mcommit 514c589243dc15b41c33c7a0ca4ff603f96cf3e5[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 16:55:43 2022 +0100
+
+    Fix typos
+
+[33mcommit 3b9276f6100ba552f48f90691a6ad8c03ac96692[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 13:42:02 2022 +0100
+
+    Add loading screen
+
+[33mcommit e981a8ff3854c9dacd6d9e5533cd2c959534f6d3[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 12:38:08 2022 +0100
+
+    Add styles
+
+[33mcommit adb25064bf6a4689cf419d83a87dd60bd2bc3fe9[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 06:10:51 2022 +0100
+
+    Add transferring data to server and store
+
+[33mcommit 2da2d2acc14cdc92f62b8853ad1c719add239813[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Wed Nov 2 04:12:56 2022 +0100
+
+    Add TableDetails component, handle local data service
+
+[33mcommit 6721029ce78b370edf0fed05297bf1e73190aa95[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Tue Nov 1 23:20:13 2022 +0100
+
+    Add homepage, render tables
+
+[33mcommit a78338fc6eb48b54938ce07d65850c117572f656[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Tue Nov 1 17:28:45 2022 +0100
+
+    Add fetching data from server
+
+[33mcommit f6cc7eea8738859b926052f57a1dac5b4c05443e[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Tue Nov 1 11:32:01 2022 +0100
+
+    Init commit
+
+[33mcommit 60fc7bbda3e79a4e7058ae25003229f60d60a0d8[m
+Author: Michał Mietła <mrbroomchannel@gmail.com>
+Date:   Tue Nov 1 09:42:06 2022 +0100
+
+    Initialize project using Create React App
